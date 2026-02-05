@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f7c6d0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #ffdfe7;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  position: relative; /* مهم */
+}
+
+h1 {
+  color: #b30059;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* المسافة بين Yes و No */
+  margin-top: 20px;
+}
+.no-wrapper {
+  position: relative;
+  width: 120px;
+  height: 60px;
+}
+button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#yesBtn {
+  background: #4CAF50;
+  color: white;
+}
+
+#yesBtn:hover {
+  transform: scale(1.1);
+}
+
+#noBtn {
+  position: absolute;
+  background: #e74c3c;
+  color: white;
+  transition: 0.3s ease;
+}
+
+
+/* صفحة I Love You */
+.love-text {
+  font-size: 2.2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
