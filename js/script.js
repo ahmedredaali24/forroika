@@ -3,20 +3,25 @@ const yesBtn = document.getElementById("yesBtn");
 
 // حركة الهروب (ماوس + تاتش)
 function moveNoButton() {
-  const container = document.querySelector(".container");
+  const btnWidth = noBtn.offsetWidth;
+  const btnHeight = noBtn.offsetHeight;
 
-  const containerRect = container.getBoundingClientRect();
-  const btnRect = noBtn.getBoundingClientRect();
+  const padding = 10; // مسافة أمان من أطراف الشاشة
 
-  const maxX = containerRect.width - btnRect.width;
-  const maxY = containerRect.height - btnRect.height;
+  const maxX = window.innerWidth - btnWidth - padding;
+  const maxY = window.innerHeight - btnHeight - padding;
 
-  const randomX = Math.random() * maxX;
-  const randomY = Math.random() * maxY;
+  let randomX = Math.random() * maxX;
+  let randomY = Math.random() * maxY;
+
+  // تأكيد إنه جوه الشاشة
+  randomX = Math.max(padding, randomX);
+  randomY = Math.max(padding, randomY);
 
   noBtn.style.left = `${randomX}px`;
   noBtn.style.top = `${randomY}px`;
 }
+
 
 
 // للماوس
@@ -32,3 +37,4 @@ noBtn.addEventListener("touchstart", (e) => {
 yesBtn.addEventListener("click", () => {
   window.location.href = "love.html";
 });
+
